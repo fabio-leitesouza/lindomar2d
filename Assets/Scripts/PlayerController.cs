@@ -50,6 +50,7 @@ public class PlayerController : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            animator.SetTrigger("Jump");
         }
         animator.SetFloat("Speed", Mathf.Abs(moveInput));
     }
