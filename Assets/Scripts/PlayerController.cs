@@ -11,11 +11,13 @@ public class PlayerController : MonoBehaviour
     public Transform groundCheck;
     public float groundCheckRadius = 0.4f;
     public LayerMask whatIsGround;
+    private Animator animator;
     
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -27,6 +29,23 @@ public class PlayerController : MonoBehaviour
         //movimento horizontal
         float moveInput = Input.GetAxisRaw("Horizontal");
         rb.velocity = new Vector2(moveInput * moveSpeed, rb.velocity.y);
+        Vector2 moveDirection = new Vector2(moveInput, 0);
+
+        if(moveDirection.magnitude > 0.1)
+        {
+            if(moveInput > 0)
+            {
+                animator.SetTrigger("Move");
+                transform.localScale = new Vector3(1, 1, 1);                
+
+            }
+            else if(moveInput < 0)
+            {
+                animator.SetTrigger("Move");
+                transform.localScale = new Vector3(-1, 1, 1);               
+            }
+        }
+
 
         if(Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
