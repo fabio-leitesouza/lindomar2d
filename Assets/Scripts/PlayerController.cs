@@ -51,5 +51,6 @@ public class PlayerController : MonoBehaviour
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         }
+        animator.SetFloat("Speed", Mathf.Abs(moveInput));
     }
 }
