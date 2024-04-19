@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     public float groundCheckRadius = 0.4f;
     public LayerMask whatIsGround;
     private Animator animator;
+    public int Collections = 0;
     
 
     void Start()
