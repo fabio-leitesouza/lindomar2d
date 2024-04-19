@@ -345,6 +345,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a89be02a1fc09e346afa0c9f8b847d9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scriptIntefaceControl: {fileID: 1780769040}
+  value: 1
 --- !u!212 &414189780
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2932,6 +2934,7 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 256
+  Collections: 0
 --- !u!95 &1672052568
 Animator:
   serializedVersion: 5

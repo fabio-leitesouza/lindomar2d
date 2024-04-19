@@ -2,25 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class InterfaceControl : MonoBehaviour
 {
     public Slider SliderCollections;
     public int TotalCollections = 10;
     private PlayerController scriptPlayerController;
+
     // Start is called before the first frame update
     void Start()
     {
         SliderCollections.maxValue = TotalCollections;
+        scriptPlayerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     public void UpdateSliderCollections()
     {
-        SliderCollections.value = scriptPlayerController.Collections;
+        if (scriptPlayerController != null)
+        {
+            SliderCollections.value = scriptPlayerController.Collections;
+        }
+        else
+        {
+            Debug.LogWarning("PlayerController not found!");
+        }
     }
 }
