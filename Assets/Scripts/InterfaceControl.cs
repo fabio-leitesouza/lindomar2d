@@ -8,6 +8,7 @@ public class InterfaceControl : MonoBehaviour
 {
     public Slider SliderCollections;
     public int TotalCollections = 10;
+    
     private PlayerController scriptPlayerController;
 
     // Start is called before the first frame update
